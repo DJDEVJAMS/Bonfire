@@ -4,7 +4,7 @@ const Hobby = require("./Hobby");
 const Post = require("./Post");
 const User = require("./User");
 const Comment = require("./Comment");
-const Events = require("./Events");
+const Events = require("./Event");
 // const ExampleData = require("./ExampleData");
 
 // Reminder- create any additional associations here
