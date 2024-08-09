@@ -56,4 +56,4 @@ Event.belongsTo(User,{
   foreignKey: 'user_id',
 });
 
-module.exports = { User, Hobby, Post, Event};
+module.exports = { User, Hobby, Post, Event,Comment};
