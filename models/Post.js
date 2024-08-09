@@ -14,15 +14,14 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    title:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     message: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    author_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-
-      },
     },
   // },
     // Reminder- Add any new columns to the ExampleData model here

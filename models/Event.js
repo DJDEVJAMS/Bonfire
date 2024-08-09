@@ -14,14 +14,14 @@ Event.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    hobbies_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "hobby",
-        key: "id",
-      },
-    },
+    // hobbies_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "hobby",
+    //     key: "id",
+    //   },
+    // },
       title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,14 +38,14 @@ Event.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "user",
-        key: "username",
-      },
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "user",
+    //     key: "username",
+    //   },
+    // },
     },
     // Reminder- Add any new columns to the ExampleData model here
   {

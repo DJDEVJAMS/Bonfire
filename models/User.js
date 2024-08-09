@@ -38,32 +38,8 @@ User.init(
       },
       // Reminder- add any new columns you'd like to the User model here
     },
-     myhobbies_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      // references: {
-      //   model: "hobby",
-      //   key: "hobby_name",
-
-    //  myposts_id: {
-    //       type: DataTypes.INTEGER,
-    //       allowNull: false,
-    //       references: {
-    //         model: "posts",
-    //         key: "id",
-    //       },
-    //   myevents_id: {
-    //         type: DataTypes.INTEGER,
-    //         allowNull: false,
-    //         references: {
-    //           model: "events",
-    //           key: "id",
-    //         },
-    // //       },
-    //     },
-      },
+    
     },
-  // },
 
   {
     hooks: {

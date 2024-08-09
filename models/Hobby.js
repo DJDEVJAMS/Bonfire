@@ -26,7 +26,7 @@ Hobby.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Hobby",
+    modelName: "hobby",
   }
 );
 module.exports = Hobby;
