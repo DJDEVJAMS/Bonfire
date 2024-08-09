@@ -4,9 +4,9 @@ const { Model, DataTypes } = require("sequelize");
 // Local Modules
 const sequelize = require("../config/connection");
 
-class Events extends Model {}
+class Event extends Model {}
 
-Events.init(
+Event.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,14 +14,14 @@ Events.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    hobbies_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "hobby",
-        key: "id",
-      },
-    },
+    // hobbies_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "hobby",
+    //     key: "id",
+    //   },
+    // },
       title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,14 +38,14 @@ Events.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "user",
-        key: "username",
-      },
-    },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: "user",
+    //     key: "username",
+    //   },
+    // },
     },
     // Reminder- Add any new columns to the ExampleData model here
   {
@@ -53,8 +53,8 @@ Events.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "Events",
+    modelName: "Event",
   }
 );
 
-module.exports = Events;
+module.exports = Event;

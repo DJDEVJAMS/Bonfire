@@ -1,12 +1,13 @@
 const sequelize = require("../config/connection");
 
 // Reminder- import any models you want to seed here
-const { User, ExampleData } = require("../models");
+const { User, Hobby, Post, Comment } = require("../models");
 
 // Reminder- import any data you want to seed here
-const exampleData = require("./exampleData.json");
+const hobbyData = require("./hobbyData.json");
 const userData = require("./userData.json");
-
+const postData = require("./postData.json");
+const commentData= require("./commentData.json")
 const seedDatabase = async () => {
   // sync all models
   await sequelize.sync({ force: true });
@@ -20,11 +21,21 @@ const seedDatabase = async () => {
   console.log("Users created");
 
   // bulkCreate example data
-  await ExampleData.bulkCreate(exampleData, {
-    individualHooks: true,
+  await Hobby.bulkCreate(hobbyData, {
+    
     returning: true,
   });
-  console.log("Example data created");
+  console.log("Hobbies data created");
+
+  await Post.bulkCreate(postData, {
+    
+    returning: true,
+  });
+  console.log("new Post data created");
+  await Comment.bulkCreate(commentData,{
+    returning: true,
+  })
+  console.log("new Comment data added");
 
   // Reminder- add any other models you want to seed here
 

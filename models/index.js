@@ -2,66 +2,58 @@
 const User = require("./User");
 const Hobby = require("./Hobby");
 const Post = require("./Post");
-const User = require("./User");
 const Comment = require("./Comment");
-const Events = require("./Events");
-// const ExampleData = require("./ExampleData");
+const Event = require("./Event");
 
-// Reminder- create any additional associations here
-User.hasMany(Post, {
-  foreignKey: "post_id"}
-);
-User.hasMany(Comment, {
-  foreignKey: "comment_id"}
-);
-User.hasMany(Events, {
-  foreignKey: "events_id",
-onDelete: "CASCADE" }
-);
-User.belongsToMany(Hobby, {
-  foreignKey: "user_id",
-  onDelete: 'CASCADE'
-}
-);
-//hobby
+// Hobbies to User relationships
+Hobby.belongsToMany(User, { through: 'UserHobbies' });
+User.belongsToMany(Hobby, { through: 'UserHobbies' });
+// Hobby.belongsToMany(User,{
+//   foreignKey: 'user_id',
+// });
+//Hobby
+Hobby.hasMany(Post,{
+  foreignKey: 'hobby_id',
+});
 
-Hobby.hasMany(User, {
-  foreignKey: "user_id",
-}
-);
+Hobby.hasMany(Event,{
+  foreignKey: 'hobby_id',
+})
 
-// event
+//User
+User.hasMany(Post,{
+  foreignKey: 'user_id',
+});
+User.hasMany(Comment,{
+  foreignKey: 'user_id',
+});
+User.hasMany(Event,{
+  foreignKey: 'user_id',
+});
 
-Event.belongsTo(User, {
-  foreignKey: "event_id", 
-}
-);
-
-// user
-
-
-
-// Post
+//Post
+Post.belongsTo(Hobby,{
+  foreignKey: 'hobby_id',
+});
 Post.belongsTo(User,{
-  foreignKey: "post_id",
-}
-);
+  foreignKey: 'user_id',
+});
+Post.hasMany(Comment,{
+  foreignKey: 'post_id',
+});
+//Comment
+Comment.belongsTo(Post,{
+  foreignKey:'post_id',
+});
+Comment.belongsTo(User,{
+  foreignKey: 'user_id',
+});
+//Event
+Event.belongsTo(Hobby,{
+  foreignKey:'hobby_id',
+});
+Event.belongsTo(User,{
+  foreignKey: 'user_id',
+});
 
-Post.hasMany(Comment, {
-  foreignKey: "post_id",
-}
-);
-
-// User.hasMany(Hobby, 
-//   { foreignKey: "post_id' });
-// Hobby.belongsTo(User, { foreignKey: "post_id' });
-
-// User.hasMany(Post, { foreignKey: "post_id' });
-// Post.belongsTo(User, { foreignKey: "post_id' });
-
-// User.hasMany(Event, { foreignKey: "post_id' });
-// Event.belongsTo(User, { foreignKey: "post_id' });
-
-
-// export all models here
-module.exports = { User, Hobby, Post, Event};
+module.exports = { User, Hobby, Post, Event,Comment};

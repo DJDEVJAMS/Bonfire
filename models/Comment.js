@@ -18,14 +18,7 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    author_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: "user",
-        key: "username",
-      },
-    },
+    
     },
     // Reminder- Add any new columns to the ExampleData model here
  {
