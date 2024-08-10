@@ -59,7 +59,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // sets up routes
 app.use(routes);
-add.use(require("./controllers/"))
+app.use(require("./controllers"))
 
 // connects database then starts express.js server
 sequelize.sync({ force: false }).then(() => {
