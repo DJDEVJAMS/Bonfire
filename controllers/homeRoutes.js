@@ -16,37 +16,50 @@ router.get("/user/:id", async (req, res) => {
 
     // Reminder- We're passing the examples data to the home handlebars template here!
     // Reminder- We're also passing the loggedIn status to the home template here so that we can conditionally render items if the user is logged in or not (like we do with the navbar using `{{if loggedIn}}`).
-    const userData = await User.findByPk(req.params.id, {
-      include: [
-        {model: Hobby, 
-        attributes:[
-          'id',
-          'hobby_name',
-        ] },{model: Event,
-          attributes:[
-            'id',
-            'title',
-            'location',
-            'event_time',
-          ]
-        },
-        {
-          model: UserHobbies, 
-          attributes:[
-            'hobby_id',
-            'user_id',
-          ]
-        },]
-    });
-    const userHobbies = userData.map((hobbies) =>{
+    // const userData = await User.findByPk(req.params.id, {
+    //   include: [
+    //     {model: Hobby, 
+    //     attributes:[
+    //       'id',
+    //       'hobby_name',
+    //     ] },{model: Event,
+    //       attributes:[
+    //         'id',
+    //         'title',
+    //         'location',
+    //         'event_time',
+    //       ]
+    //     },
+    //     {
+    //       model: UserHobbies, 
+    //       attributes:[
+    //         'hobby_id',
+    //         'user_id',
+    //       ]
+    //     },]
+    // });
+    // console.log(userData);
+    // const userHobbies = userData.map((hobbies) =>{
             
-    })
+    // })
+    const UserHobbiesData = await UserHobbies.findAll({where:{user_id:req.params.id}});
+    const hobbies = UserHobbiesData.map((hobby)=> hobby.get({plain:true}));
+    console.log(hobbies); 
+    let hobbyArray = [];
+     for(let i = 0; i<hobbies.length;i++){
+      let hobbyToPush =await Hobby.findByPk(hobbies[i].hobby_id);
+      const hobby = hobbyToPush.get({plain: true});
+      hobbyArray.push(hobby);
+    
+  };
+  console.log(hobbyArray);
     res.render("home", {
-      examples,
+      hobbyArray,
       loggedIn: req.session.logged_in,
       username: req.session.username,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

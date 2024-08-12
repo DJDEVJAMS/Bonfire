@@ -1,9 +1,9 @@
 <div>
     {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
 
-  {{#each examples}}
+  {{#each hobbyArray}}
   {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/ directory! --}}
-    {{>items}}
+    <p>{{hobby_name}}</p>
   {{/each}}
 </div>
 
