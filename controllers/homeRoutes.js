@@ -42,8 +42,10 @@ router.get("/user/:id", async (req, res) => {
     // const userHobbies = userData.map((hobbies) =>{
             
     // })
+    const profile = await(User.findByPk(req.params.id))
     const UserHobbiesData = await UserHobbies.findAll({where:{user_id:req.params.id}});
     const hobbies = UserHobbiesData.map((hobby)=> hobby.get({plain:true}));
+    const name = profile.username
     console.log(hobbies); 
     let hobbyArray = [];
      for(let i = 0; i<hobbies.length;i++){
@@ -52,8 +54,11 @@ router.get("/user/:id", async (req, res) => {
       hobbyArray.push(hobby);
     
   };
+  
+  console.log(name);
   console.log(hobbyArray);
     res.render("home", {
+      name,
       hobbyArray,
       loggedIn: req.session.logged_in,
       username: req.session.username,
