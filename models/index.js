@@ -4,10 +4,11 @@ const Hobby = require("./Hobby");
 const Post = require("./Post");
 const Comment = require("./Comment");
 const Event = require("./Event");
+const UserHobbies = require("./UserHobbies.js");
 
 // Hobbies to User relationships
-Hobby.belongsToMany(User, { through: 'UserHobbies' });
-User.belongsToMany(Hobby, { through: 'UserHobbies' });
+Hobby.belongsToMany(User, {through:{ model: UserHobbies,}});
+User.belongsToMany(Hobby, { through:{ model: UserHobbies,} });
 // Hobby.belongsToMany(User,{
 //   foreignKey: 'user_id',
 // });
@@ -56,4 +57,4 @@ Event.belongsTo(User,{
   foreignKey: 'user_id',
 });
 
-module.exports = { User, Hobby, Post, Event,Comment};
+module.exports = { User, Hobby, Post, Event,Comment,UserHobbies};
