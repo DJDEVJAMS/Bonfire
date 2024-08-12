@@ -2,7 +2,7 @@
 const { Model, DataTypes } = require("sequelize");
 
 // Local Modules
-const sequelize = require("../config/connection");
+const sequelize = require("../config/connection.js");
 
 class Event extends Model {}
 
@@ -53,7 +53,7 @@ Event.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: "Event",
+    modelName: "event",
   }
 );
 
