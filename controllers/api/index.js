@@ -11,7 +11,7 @@ const commentRoutes = require("./commentRoutes");
 
 
 // Connect the routes to the router here
-router.use("/user", userRoutes);
+router.use("/users", userRoutes);
 // router.use("/myBlogs", myBlogRoutes);
 // router.use("/myEventRoutes", myEventRoutes);
 router.use("/event", eventRoutes);
