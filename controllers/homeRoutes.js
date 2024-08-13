@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 // Import any models you plan to use for data's routes here
-const { ExampleData, User, Hobby,Event, UserHobbies } = require("../models/");
+const { User, Hobby,Event, UserHobbies,Post,Comment } = require("../models/");
 
 // If you would like to use an authGuard middleware, import it here
 
@@ -35,6 +35,42 @@ router.get("/user/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// Get a post and all comments linked to it
+router.get("/post/:id", async (req, res) => {
+  try {
+const postWithComments = await Post.findByPk(req.params.id, {attributes: ["id","message","user_id"], include: [{model: Comment, attributes: ["id", "message", "post_id"], include: [{model: User, attributes: ["username"]}]}],
+});
+if (!postWithComments) {
+  return res.status(404).json({ error: "Post not found" });
+}
+// console.log(`line 47 ${postWithComments}`);
+const thread = postWithComments.get({plain: true});
+console.log(`line 49 follows${Post}`);
+
+const comments = thread.comments || [];
+// console.log(` line 51 ${thread.comments}`);
+
+const commentArray = comments.map((comment) => comment);
+
+// console.log(post)
+console.log(thread);
+console.log(commentArray);
+res.render("Home", {
+  thread,
+  postWithComments,
+  commentArray,
+  comments,
+  // username: comments.user.username
+  // loggedIn: req.session.logged_in,
+  // username: req.session.username,
+});
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+}); 
 
 // add a get /login route here
 router.get("/login", (req, res) => {
