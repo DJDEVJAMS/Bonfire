@@ -9,6 +9,13 @@ body {
 }
 
 
+#bonlogo {
+  max-width: 50%;
+  height: auto;
+  display: flex;
+  align-content: center;
+  /* justify-content: center; */
+}
 
 #header {
   background-color: lightblue;
@@ -16,9 +23,21 @@ body {
 #footer {
   background-color: lightcoral;
 }
+
+
 #nav {
   display: flex;
   justify-content: center;
+}
+
+nav a {
+  color: #b9c6ae;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #fff;
 }
 
 #nav > ul {
