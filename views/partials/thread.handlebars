@@ -1,0 +1,24 @@
+<div class="post-thread">
+  <header>
+    <h1>{{thread.title}}</h1>
+    <h2>{{hobby}}</h2>
+    <h3>{{thread.post.message}}</h3>
+    <p>Posted by User ID: {{thread.user_id}}</p>
+    <p>{{thread.message}}</p>
+  </header>
+  <section>
+    <h2>Comments</h2>
+    {{#if commentArray.length}}
+      <ul>
+        {{#each commentArray}}
+          <li>
+            <p>{{this.message}}</p>
+            <footer>Commented by: {{this.user.username}} </footer>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No comments yet. Be the first to comment!</p>
+    {{/if}}
+  </section>
+</div>
