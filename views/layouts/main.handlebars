@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{! Reminder- Edit this for your project! }}
-    <title>BONFIRE</title>
+ 
     <link rel="stylesheet" href="/css/style.css" />
   
   </head>
@@ -12,6 +12,7 @@
 
   <body id="background">
 
+           
     {{! Navbar }}
     <nav id="nav">
       <ul>
@@ -30,7 +31,11 @@
     </header>
 
     {{! Content }}
-    <main>
+    <main> 
+
+      <div id="bonlogo">
+         <img id="blogo" src="/images/Bonfire_logo.png" alt="logo" />
+      </div>
       {{!-- Reminder- Depending on which route your user is visiting, the {{{body}}} will be replaced with the respective handlebar located in the /views/ directory!--}}
       {{{body}}}
     </main>
