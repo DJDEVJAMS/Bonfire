@@ -1,3 +1,10 @@
 <div>
     <h2>Welcome to the {{hobby_name}} Campfire!</h2>
+    <section>
+        <h3>Posts</h3>
+        {{#each posts}}
+        <h4>{{title}}</h4>
+       <p>posted by:{{authors}} </p>
+        {{/each}}
+    </section>
 </div>

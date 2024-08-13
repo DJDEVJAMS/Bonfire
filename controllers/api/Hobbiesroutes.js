@@ -25,15 +25,23 @@ router.get("/:id", async (req,res)=>{
             },
             {
                 model: User,
-                attributes: [
+                attributes:[
                     'id',
                     'username',
                 ]
-            },
+            }
+            
         ]
     });
+  
     const blog = hobbyData.get({plain: true});
+    // const authorData =await User.findAll({where:{id:blog.posts[0].user_id}});
+    // const authors = authorData.map((author)=>author.get({plain:true}));
+
+   
     console.log(blog);
-    res.render('hobby',blog);
+    // console.log(authors);
+   
+    res.render("hobby",blog);
     });
 module.exports = router;
