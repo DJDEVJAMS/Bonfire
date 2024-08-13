@@ -9,25 +9,32 @@ body {
 }
 
 
-#bonlogo {
-  max-width: 50%;
-  height: auto;
-  display: flex;
-  align-content: center;
-  /* justify-content: center; */
-}
-
 #header {
-  background-color: lightblue;
+  display: flex;
+  justify-content: center;
 }
 #footer {
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
+  display: flex;
+    justify-content: center;
 }
 
 
 #nav {
   display: flex;
   justify-content: center;
+  background-color: #FFA500;
+  border-radius: 5px;
+}
+
+nav a {
+  color: #B9C6AE;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #fff;
 }
 
 nav a {
@@ -49,6 +56,16 @@ nav a:hover {
 #nav > ul > li {
   margin: 0 10px;
 }
+
+/* #nav > ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+
+#nav > ul > li {
+  margin: 0 10px;
+} */
 
 
 
