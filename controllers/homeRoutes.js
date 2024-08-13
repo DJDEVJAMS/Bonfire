@@ -15,24 +15,29 @@ const {
 // add a get / (landing page) route here
 router.get("/", async (req, res) => {
   try {
-    const homeUser = req.session.user_id
-    console.log("=============================================================");
-    console.log(homeUser);
+    // const homeUser = req.session.user_id
+    
     //   const profile = await(User.findByPk(req.session.id))
-    //   const UserHobbiesData = await UserHobbies.findAll({where:{user_id:req.params.id}});
-    //   const hobbies = UserHobbiesData.map((hobby)=> hobby.get({plain:true}));
-    //   const name = profile.username;
-    //   console.log(hobbies);
-    //   let hobbyArray = [];
-    //    for(let i = 0; i<hobbies.length;i++){
-    //     let hobbyToPush =await Hobby.findByPk(hobbies[i].hobby_id);
-    //     const hobby = hobbyToPush.get({plain: true});
-    //     hobbyArray.push(hobby);
+    let hobbyArray = [];
+    if(req.session.user_id){
+      const UserHobbiesData = await UserHobbies.findAll({where:{user_id:req.session.user_id}});
+     
+        const hobbies = UserHobbiesData.map((hobby)=> hobby.get({plain:true}));
+        // const name = profile.username;
+        console.log(hobbies);
+       
+         for(let i = 0; i<hobbies.length;i++){
+          let hobbyToPush =await Hobby.findByPk(hobbies[i].hobby_id);
+          const hobby = hobbyToPush.get({plain: true});
+          hobbyArray.push(hobby);
 
-    // };
+  
+      };
+      }
+     
 
     res.render("home", {
-      // hobbyArray,
+      hobbyArray,
       loggedIn: req.session.logged_in,
       username: req.session.username,
     });
