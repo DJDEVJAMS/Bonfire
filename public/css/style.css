@@ -1,5 +1,15 @@
 /* any css stylesheets can go in this folder */
 /* hint- remember to import them in your handlebars! */
+
+body {
+  background-image: url('/public/images/EB3BFBEB-9C2F-4F0E-B0B4-F6BD1DDC6FAE.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
 #header {
   background-color: lightblue;
 }
@@ -8,6 +18,7 @@
 }
 #nav {
   display: flex;
+  justify-content: center;
 }
 
 #nav > ul {
@@ -18,4 +29,101 @@
 
 #nav > ul > li {
   margin: 0 10px;
+}
+
+
+
+/* login form  */
+
+
+#login-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #FFFFFF; /* White text for readability */
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #f9f9f9; /* Light background for input fields */
+  color: #000; /* Black text inside inputs for readability */
+}
+
+#login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF4500; /* Campfire color */
+  color: #FFFFFF; /* White text */
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#login-form button:hover {
+  background-color: #FFA500; /* Food Stand Awning color */
+}
+
+#login-form h2 {
+  color: #FFD700; /* Flag color for heading */
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+#login-form a {
+  color: #4682B4; /* Tent color for the signup link */
+  text-decoration: none;
+  justify-content: center;
+}
+
+#login-form a:hover {
+  text-decoration: underline;
+  justify-content: center;
+}
+
+
+
+/* signup form  */
+
+#signup-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+
+#signup-form input[type="text"],
+#signup-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+#signup-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #FF4500;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#signup-form button:hover {
+  background-color: #FFA500;
+  text-decoration: underline;
 }
