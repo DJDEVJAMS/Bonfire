@@ -40,7 +40,7 @@ router.get("/user/:id", async (req, res) => {
 // Get a post and all comments linked to it
 router.get("/post/:id", async (req, res) => {
   try {
-const postWithComments = await Post.findByPk(req.params.id, {attributes: ["id","message","user_id"], include: [{model: Comment, attributes: ["id", "message", "post_id"], include: [{model: User, attributes: ["username"]}]}],
+const postWithComments = await Post.findByPk(req.params.id, {attributes: ["id","message","user_id","created_at"], include: [{model: Comment, attributes: ["id", "message", "post_id"], include: [{model: User, attributes: ["username"]}]}],
 });
 if (!postWithComments) {
   return res.status(404).json({ error: "Post not found" });
