@@ -2,7 +2,7 @@
 /* hint- remember to import them in your handlebars! */
 
 body {
-  background-image: url('/public/images/EB3BFBEB-9C2F-4F0E-B0B4-F6BD1DDC6FAE.jpg');
+  background-image: url('/images/EB3BFBEB-9C2F-4F0E-B0B4-F6BD1DDC6FAE.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -34,7 +34,11 @@ body {
 
 
 /* login form  */
-
+#login-header {
+  
+    display: flex;
+    justify-content: center;
+}
 
 #login-form {
   width: 300px;
