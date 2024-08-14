@@ -1,6 +1,6 @@
 
-const messageEl = "This is great article I found.......";
-const titleEl ="This just in";
+const messageEl = document.querySelector('#post-message').value.trim();
+const titleEl = document.querySelector('#post-title').value.trim();
 const hobbyName = 1;
 
 const addPost = async () => {
@@ -17,4 +17,4 @@ const addPost = async () => {
     })
     console.log(response);
 }
-addPost();
+// addPost(); add event listener here..
