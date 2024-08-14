@@ -34,13 +34,16 @@ router.get("/", async (req, res) => {
 // Post a new Post
 router.post("/", async (req, res) => {
   try {
+    console.log(req.body);
     const postData = await Post.create({
-      message: req.body.message,
+      message: req.body.post.message,
+      title: req.body.post.title,
       user_id: req.session.user_id,
-      hobby_id: req.body.hobby_id,
+      hobby_id: req.body.post.hobby_id,
     });
     res.status(200).json(postData);
   } catch (err) {
+    console.log(err);
     res.status(400).json(err);
   }
 });

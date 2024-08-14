@@ -40,7 +40,7 @@ router.get("/:id", async (req,res)=>{
    
     // console.log(blog);
     // console.log(authors);
-   console.log(blog);
+//    console.log(blog);
 //    console.log(hobbyData.posts.user);
     res.render("hobby",{
         hobby_name: blog.hobby_name,
