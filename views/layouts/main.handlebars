@@ -4,17 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{! Reminder- Edit this for your project! }}
- 
+    <title>BONFIRE</title>
     <link rel="stylesheet" href="/css/style.css" />
-  
-  </head>
 
+  </head>
 
   <body id="background">
 
            
     {{! Navbar }}
     <nav id="nav">
+  <div id="header-container">
+      <header id="header">
+        
+      </header>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/pageOne">Page One</a></li>
@@ -30,6 +33,7 @@
       <h1>Bonfire</h1>
     </header>
 
+
     {{! Content }}
     <main> 
 
@@ -40,10 +44,10 @@
       {{{body}}}
     </main>
 
-    {{! Footer }}
+     {{! Footer }}
     <footer id="footer">
-      <h1>
-        Brought to you by olympic Coders</h1>
+      <h2 class="olympic-coders">Olympic Coders</h2>
+      <p>Coding Champions of the Digital World</p>
     </footer>
 
     {{#if loggedIn}}
