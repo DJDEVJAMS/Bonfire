@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
      
         const hobbies = UserHobbiesData.map((hobby)=> hobby.get({plain:true}));
         // const name = profile.username;
-        console.log(hobbies);
+        
        
          for(let i = 0; i<hobbies.length;i++){
           let hobbyToPush =await Hobby.findByPk(hobbies[i].hobby_id);
@@ -54,6 +54,10 @@ router.get("/post/:id", async (req, res) => {
       attributes: ["id", "message", "user_id", "created_at"],
       include: [
         {
+          model: User,
+          attributes:["username"],
+        },
+        {
           model: Comment,
           attributes: ["id", "message", "post_id"],
           include: [{ model: User, attributes: ["username"] }],
@@ -63,18 +67,16 @@ router.get("/post/:id", async (req, res) => {
     if (!postWithComments) {
       return res.status(404).json({ error: "Post not found" });
     }
-    // console.log(`line 47 ${postWithComments}`);
+    
     const thread = postWithComments.get({ plain: true });
-    console.log(`line 49 follows${Post}`);
+    
 
     const comments = thread.comments || [];
-    // console.log(` line 51 ${thread.comments}`);
+    
 
     const commentArray = comments.map((comment) => comment);
 
-    // console.log(post)
-    console.log(thread);
-    console.log(commentArray);
+    
     res.render("single-post", {
       thread,
       postWithComments,
