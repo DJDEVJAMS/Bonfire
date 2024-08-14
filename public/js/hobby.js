@@ -1,7 +1,7 @@
 
-const messageEl = document.querySelector('#post-message').value.trim();
-const titleEl = document.querySelector('#post-title').value.trim();
-const hobbyName = 1;
+// const messageEl = document.querySelector('#post-message').value.trim();
+// const titleEl = document.querySelector('#post-title').value.trim();
+// const hobbyName = 1;
 
 const addPost = async function (event) {
     event.preventDefault();
