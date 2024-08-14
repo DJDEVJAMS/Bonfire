@@ -17,4 +17,4 @@ const addPost = async () => {
     })
     console.log(response);
 }
-addPost();
+// addPost(); add event listener here..
