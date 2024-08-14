@@ -1,13 +1,15 @@
+<link href="https://unpkg.com/intro.js/minified/introjs.min.css" rel="stylesheet" />
+
 <div>
   <div style="display:flex;align-content:center;Justify-content:center;"> 
     <img src="/images/bonfire_logo.png"  alt="bonfire" style="width:15%; height:15%;">
     </div>
   <div>
-    <h2 class="flex" id="login-header" >Login</h2>
+    <h2 class="flex" id="login-header" ></h2>
   </div>
   <form id="login-form">
     <div>
-      <label for="username-input-login">Username</label>
+      <label for="username-input-login"  data-title="Welcome" data-intro="Welcome Enter Username and Password">Username</label>
       <input type="text" id="username-input-login" />
     </div>
     <div>
@@ -65,6 +67,10 @@
 
 <script src="/js/login.js"></script>
 
+<script src="https://unpkg.com/intro.js/minified/intro.min.js"></script>
+<script>
+  introJs().start();
+</script>
 
 
 
