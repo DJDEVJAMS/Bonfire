@@ -17,13 +17,14 @@
     </nav>
     </div>
 
-<div id="bonlogo">
-         <img id="blogo" src="/images/Bonfire_logo.png" alt="logo" />
-      </div> 
-
+<div>
+  <div style="display:flex;align-content:center;Justify-content:center;"> 
+    <img src="/images/bonfire_logo.png"  alt="bonfire" style="width:15%; height:15%;">
+    </div>
+  <div>
     {{!-- Initial Poster and post --}}
 <div class="post-thread" style="background-color: rgba(255, 253, 253, 0.9); color: #3b3b3b; border-radius: 8px; padding: 20px; border: 1px solid #cecdcd; box-shadow: 0 4px 8px rgba(3, 3, 3, 0.1);">
- <div style="border: 2px solid black; padding: 15px; border-radius: 8px;">
+ <div>
   <header>
    <header style="text-align: center;">
   <h1 style="margin-bottom: 10px; color: #1f1e1e; font-size: 2.5em;">{{thread.title}}</h1>
@@ -40,7 +41,7 @@
 <section>
   <h2 style="margin-top: 20px; color: #444;">Comments</h2>
   {{#if commentArray.length}}
-    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+    <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; flex-direction: column;">
       {{#each commentArray}}
         <li style="background-color: #ffffff; margin-bottom: 20px; padding: 15px; border-radius: 8px; border: 1px solid #e1e1e1; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); display: flex; flex-direction: column;">
           <p style="margin: 0; color: #2b2a2a;">{{this.message}}</p>

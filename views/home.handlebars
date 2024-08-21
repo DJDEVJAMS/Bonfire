@@ -1,13 +1,15 @@
 <link href="https://unpkg.com/intro.js/minified/introjs.min.css" rel="stylesheet" />
 
 {{!-- --Navbar-- --}}
-
+ {{#if loggedIn }}
  <nav id="nav">
+
       {{! Header }}
 <div id="header-container">
       <header id="header"> 
         
       </header>
+      
       <ul>
 
         <li><a href="/">Home</a></li>
@@ -20,20 +22,21 @@
       </ul>
     </nav>
     </div>
+{{/if}}
 
-
-<div class="hobbies-container">
+<div class="hobbies-container" style="Padding-Bottom: 10%;">
     {{!-- Reminder: examples comes from the data being passed in the res.render on homeRoutes.js! --}}
     {{#if loggedIn }}
-  <h1>Welcome {{username}} here are your hobbies:</h1>
+  <h1 style="color:#ffffff;font-weight:900;font-stretch:expanded;font-family: 'Arial', sans-serif; Font-Size:30pt;text-shadow:2px 2px 5px #c7520b">Welcome {{username}} here are your hobbies:</h1>
 
   {{#each hobbyArray}}
   {{!-- Reminder- this is a partial! Handlebars will render the code located in items.handlebars in the /partials/ directory! --}}
     <a href="/api/hobbies/{{id}}"><header>{{hobby_name}}</header></a>
   {{/each}}
   {{else}}
-  <h1>Welcome to Bonfire</h1>
-  <h3>It looks like you havent logged in yet click here: <a href="/login">Login</a></h3>
+
+  <h1 id=welcome style="color:#c7502b;font-weight:900;font-stretch:expanded;font-family: 'Arial', sans-serif; Font-Size:700%;text-shadow:2px 2px 5px #ffffff">Welcome to Bonfire</h1>
+  <h3 style="color:rgb(255, 255, 255); font-weight:bold;font-family: 'Arial', sans-serif;font-weight:900;Font-Size:200%; Padding-Bottom: 20%;">It looks like you havent logged in yet click here: <a href="/login" style="display:block; margin: 0 auto;   padding: 10px 20px; border: none; border-radius: 5px;">Login</a></h3>
   {{/if}}
 </div>
 {{!-- <div>
