@@ -292,18 +292,6 @@ h1 {
   color: #fff; /* White text on hover */
 }
 
-/* .Post {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 300px; /* Adjust height as needed */
-  padding: 20px;
-  border: 2px solid #e16a34; /* Optional: border for styling */
-  border-radius: 10px; /* Optional: rounded corners */
-}
-
-
-
 /* Post Session */
 
 .post-container {
@@ -388,10 +376,19 @@ h1 {
   align-items: center;
 }
 
-#new-Post-form label {
+/* #new-Post-form input {
   font-size: 16px;
   margin-bottom: 10px;
   color: #333333;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  resize: none;
+  min-height: 100px;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
 #new-Post-form textarea {
@@ -404,7 +401,7 @@ h1 {
   min-height: 100px;
   margin-bottom: 15px;
   font-size: 16px;
-}
+} */
 
 #new-Post-form button {
   padding: 10px 20px;
@@ -417,4 +414,8 @@ h1 {
 
 #new-Post-form button:hover {
   background-color: #c7502b;
+}
+
+h1 #welcome {
+color:orange
 }
